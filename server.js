@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const exhbs = require('express-handlebars');
 const path = require('path');
-const sequelize = require('sequelize');
+const sequelize = require('./config/connection');
 const hbs = exhbs.create({})
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
