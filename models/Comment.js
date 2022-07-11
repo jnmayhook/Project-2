@@ -24,6 +24,13 @@ Comment.init(
                 model: 'user',
                 key: 'id',
             }
+        }, 
+        project_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'post',
+                key: 'id',
+            } 
         }
     },
     {
