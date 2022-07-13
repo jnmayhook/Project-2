@@ -15,10 +15,6 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
         post_text: {
             type: DataTypes.STRING(1000)
         },

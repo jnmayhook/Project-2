@@ -12,8 +12,9 @@ router.get('/', async (req, res) => {
             ]
         });
 
-        const posts = postData.map((posts) => posts.get({ plain: true }))
+        const posts = postData.map((posts) => posts.get({ plain: true }));
 
+        console.log(posts)
         res.render('homepage', {
             posts
         })
@@ -24,4 +25,4 @@ router.get('/', async (req, res) => {
 });
 
 
-module.exports = router
+module.exports = router;
