@@ -8,6 +8,76 @@
     justify-content: flex-start;
     background-position: top;
 }
+
+#login-page .hero-section {
+    height: 100vh;
+}
+
+#login-page .hero-section-text {
+    text-align: center;
+
+}
+
+#login-page .hero-section-text h5 {
+    padding: 20px 0px 40px 0px;
+}
+
+#login-page .log-in-form input::placeholder {
+    opacity: .9;
+    color: #c0771b;
+    font-family: 'Roboto', sans-serif;
+}
+
+.label input {
+    border-radius: 3px;
+}
+
+.log-in-form label {
+    color: #fff;
+}
+
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea {
+    height: 2.8rem;
+    border-radius: 2px;
+
+}
+
+.forgot-password {
+    text-align: left;
+    position: relative;
+    top: -10px;
+}
+
+.forgot-password a {
+    font-style: italic;
+    color: #fff !important;
+}
+
+.button.orange {
+    background-color: #c0771b;
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #f6a440b5;
+    border-radius: 1px;
+    font-size: 15px;
+}
+.button.orange:hover {
+    opacity: .9;
+}
 .footer {
     background: url(../images/footer_image.jpg) repeat;
     height: 200px;
@@ -18,13 +88,16 @@
     text-align: center;
 
 }
+
 .footer .menu {
     justify-content: center;
 }
+
 .footer .menu a {
-    color:#fff;
+    color: #fff;
     opacity: .8;
 }
+
 .footer .menu a:hover {
     opacity: .9;
 }
@@ -106,6 +179,7 @@
 a {
     color: #c0771b;
 }
+
 a:hover {
     color: #c0771b;
     opacity: .8;
@@ -125,9 +199,11 @@ p {
     font-family: 'Merriweather', serif;
     font-style: italic;
 }
+
 .posts-wrap {
-    margin-top:-40px;
+    margin-top: -40px;
 }
+
 .posts-panel {
     max-width: 75rem;
     margin-right: auto;
