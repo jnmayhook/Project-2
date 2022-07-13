@@ -9,25 +9,40 @@
     background-position: top;
 }
 
-#login-page .hero-section {
+#create-post-page .hero-section {
+    height: 13vh;
+}
+
+#login-page .hero-section,
+#signup-page .hero-section {
     height: 100vh;
 }
 
-#login-page .hero-section-text {
+#login-page .hero-section-text,
+#signup-page .hero-section-text {
     text-align: center;
 
 }
 
-#login-page .hero-section-text h5 {
+#login-page .hero-section-text h5,
+#signup-page .hero-section-text h5 {
     padding: 20px 0px 40px 0px;
 }
 
-#login-page .log-in-form input::placeholder {
+#login-page .log-in-form input::placeholder,
+#signup-page .log-in-form input::placeholder {
     opacity: .9;
-    color: #c0771b;
+    color: #ae926b;
     font-family: 'Roboto', sans-serif;
 }
-
+.button.upload-file {
+    background-color: #c0771b;
+    border: 1px solid #e0ccb0;
+    border-radius:3px;
+}
+.button.upload-file:hover {
+    opacity:.9;
+}
 .label input {
     border-radius: 3px;
 }
@@ -62,6 +77,11 @@ textarea {
     top: -10px;
 }
 
+.terms-of-use {
+    margin-top: 40px;
+    font-weight: bold;
+}
+
 .forgot-password a {
     font-style: italic;
     color: #fff !important;
@@ -69,14 +89,20 @@ textarea {
 
 .button.orange {
     background-color: #c0771b;
+    border: 1px solid #e0ccb0;
+    border-radius:3px;
     width: 50%;
     margin: 0 auto;
-    border: 1px solid #f6a440b5;
     border-radius: 1px;
     font-size: 15px;
 }
+
 .button.orange:hover {
     opacity: .9;
+}
+.button.orange.post-form {
+    margin: 0;
+    float: right;
 }
 .footer {
     background: url(../images/footer_image.jpg) repeat;
