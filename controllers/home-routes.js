@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes:['username']
+                    attributes: ['username']
                 }
             ]
         });
@@ -31,7 +31,7 @@ router.get('/login', (req, res) => {
       return;
     }*/
     res.render('login');
-  });
+});
 
 
 module.exports = router;
