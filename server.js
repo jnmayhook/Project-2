@@ -5,6 +5,7 @@ const path = require('path');
 const sequelize = require('./config/connection');
 const hbs = exhbs.create({})
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const routes = require('./controllers')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +19,8 @@ const sess = {
         db: sequelize,
       }),
 };
+
+app.use('/', routes)
 
 app.use(session(sess));
 
