@@ -30,7 +30,6 @@ router.get('/login', (req, res) => {
       res.redirect('/profile');
       return;
     }*/
-    //res.send("hi");
     res.render('login');
   });
 
