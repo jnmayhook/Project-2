@@ -1,3 +1,4 @@
+
 const express = require('express');
 const session = require('express-session');
 const exhbs = require('express-handlebars');
@@ -20,7 +21,9 @@ const sess = {
       }),
 };
 
-app.use('/', routes)
+//adding
+//app.use(routes);
+//app.use('/', routes)
 
 app.use(session(sess));
 
@@ -31,6 +34,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`The server has started on http://localhost:${PORT}`))
