@@ -4,14 +4,13 @@ const loginForm = async (event) => {
   event.preventDefault();
 
   //grabbing from handlebars
-  const email = document.querySelector('#email_log').value.trim();
+  const username = document.querySelector('#email_log').value.trim();
   const password = document.querySelector('#password_log').value.trim();
 
-  //if email and password exist --> post req
-  if (email && password) {
+  if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -25,4 +24,3 @@ const loginForm = async (event) => {
 };
 
 document.querySelector('#log-form').addEventListener('submit', loginForm);
-console.log('hi');
