@@ -348,7 +348,7 @@
                <div class="large-4 medium-4 cell">
                   <ul class="menu">
                      <li class="hide-for-small-only border-right"><a href="#"><b>Signed In</b></a></li>
-                     <li class="hide-for-small-only"><a href="#">Log Out</a></li>
+                     <li class="hide-for-small-only"><a href="">Log Out</a></li>
                   </ul>
                </div>
             </div>
@@ -371,28 +371,17 @@
                </nav>
             </div>
             <div class="large-3 medium-4 cell have-we-met">
-               <h4>Username here..</h4>
-               <h6><i>Inspirational message maybe</i></h6>
+               <h4>Welcome, back</h4>
+               <h6><i>{{username}}</i></h6>
                <hr>
                <h5>Forum Tools</h5>
                <p><a href="/">Show Posts</a>
                </p>
             </div>
             <div class="large-9 medium-8 cell">
-               <form class="create-post-form" id="create-post-form">
-                  <label>
-                     Post Title
-                     <input type="text" id="postTitle">
-                  </label>
-
-                  <label>
-                     What's on your mind?
-                     <textarea type="text" placeholder="Write something.." rows="10"  id="postBody"></textarea>
-                  </label>
-                  <label for="exampleFileUpload" class="button upload-file">Upload File</label>
-                  <input type="file" id="exampleFileUpload" class="show-for-sr">
-                  <input type="submit" class="button orange expanded post-form" value="Create Post"></input>
-               </form>
+               
+               {{!-- Users posts go here --}}
+               
             </div>
          </div>
       </div>

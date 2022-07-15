@@ -3,7 +3,7 @@
     <div class="grid-x grid-padding-x grid-padding-y align-justify header">
       <div class="large-4 medium-4 cell">
         <figure>
-          <a class="logo">
+          <a class="logo" href="/">
             <svg
               version="1.1"
               id="Layer_1"
@@ -675,6 +675,34 @@
               </div>
             </div>
           </div>
+
+
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+
+
+  {{#if posts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
+
+    {{#each posts as |post|}}
+
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
+
+
+
+
+
         </div>
       </div>
     </div>
