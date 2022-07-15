@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { json } = require("sequelize/types");
 const { User, Post, Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 router.get("/", async (req, res) => {
     try {
@@ -19,7 +20,7 @@ router.get("/", async (req, res) => {
     } catch (err) { }
 })
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
             // Placeholder until frontend made
@@ -33,7 +34,7 @@ router.post("/", async (req, res) => {
     }
 }); 
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
     try {
         const deletedComment = Comment.destroy({
             where: {
