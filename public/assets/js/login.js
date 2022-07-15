@@ -14,9 +14,9 @@ const loginForm = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    //if  response is acceptable, replace the doc link with /
+    //if response is acceptable, replace the doc link with /
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/createpost');
     } else {
       alert('Failed to log in');
     }
