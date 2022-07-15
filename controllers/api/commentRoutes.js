@@ -1,6 +1,14 @@
 const router = require("express").Router(); 
 const { Comment } = require("../../models");
 
+router.get("/", async (req, res) => {
+    try {
+        const allComments = await Comment.findAll({
+            where: 
+        })
+    } catch (err) {}
+})
+
 router.post("/", async (req, res) => {
     try {
         const newComment = await Comment.create({
