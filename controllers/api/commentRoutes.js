@@ -33,3 +33,14 @@ router.post("/", async (req, res) => {
     }
 }); 
 
+router.delete("/:id", async (req, res) => {
+    try {
+        const deletedComment = Comment.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
