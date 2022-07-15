@@ -1,10 +1,10 @@
 const newPostHandler = async (event) => {
     event.preventDefault();
   
-    const postTitle = document.querySelector('#postTitle').value.trim();
-    const postBody = document.querySelector('#postBody').value.trim();
+    const title = document.querySelector('#postTitle').value.trim();
+    const post_text = document.querySelector('#postBody').value.trim();
   
-    if (postTitle && postBody) {
+    if (title && post_text) {
       const response = await fetch(`/`, {
         method: 'POST',
         body: JSON.stringify({ title, post_text }),
