@@ -371,8 +371,8 @@
                </nav>
             </div>
             <div class="large-3 medium-4 cell have-we-met">
-               <h4>Username here..</h4>
-               <h6><i>Inspirational message maybe</i></h6>
+               <h4>Welcome,</h4>
+               <h6><i>{{username}}</i></h6>
                <hr>
                <h5>Forum Tools</h5>
                <p><a href="/">Show Posts</a>
@@ -389,9 +389,9 @@
                      What's on your mind?
                      <textarea type="text" placeholder="Write something.." rows="10"  id="postBody"></textarea>
                   </label>
-                  <label for="exampleFileUpload" class="button upload-file">Upload File</label>
-                  <input type="file" id="exampleFileUpload" class="show-for-sr">
-                  <input type="submit" class="button orange expanded post-form" value="Create Post"></input>
+                  {{!-- <label for="exampleFileUpload" class="button upload-file">Upload File</label>
+                  <input type="file" id="exampleFileUpload" class="show-for-sr"> --}}
+                  <input type="submit" class="button orange expanded post-form" value="Create Post" style="width:100%;"></input>
                </form>
             </div>
          </div>
