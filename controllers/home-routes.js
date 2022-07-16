@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 
         console.log(posts)
         res.render('homepage', {
-            posts
+            posts,
+            logged_in: req.session.logged
         })
 
     } catch (err) {

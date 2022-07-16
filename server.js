@@ -39,3 +39,5 @@ sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`The server has started on http://localhost:${PORT}`))
 })
 
+
+// adfas
