@@ -1,6 +1,24 @@
 const router = require("express").Router();
-const { Post } = require("../../models");
+const { User, Post, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
+
+// For testing: to view all posts in database
+router.get("/", async (req, res) => {
+    try {
+        const allPostData = await Post.findAll({
+            include: [
+                { model: User,
+                attributes: { exclude: ["password"]} 
+            },
+            ]
+        }); 
+
+        const allPosts = allPostData.map((post) => post.get({ plain: true }));
+        res.json(allPosts);
+    } catch (err) {
+        res.status(500).json(err); 
+    }
+})
 
 router.post("/", withAuth, async (req, res) => {
     try {
