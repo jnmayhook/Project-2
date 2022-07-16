@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 3000;
 
 const sess = {
     secret: 'Super Secret Secret',
-    cookie: {},
+    cookie: {
+        maxAge: 43200
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -38,6 +40,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`The server has started on http://localhost:${PORT}`))
 })
-
-
-// adfas

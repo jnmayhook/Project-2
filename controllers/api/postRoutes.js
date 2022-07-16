@@ -20,17 +20,36 @@ router.get("/", async (req, res) => {
     }
 })
 
+// For devs
+router.get("/:id", async (req, res) => {
+    try {
+        const onePostData = await Post.findByPk(req.params.id,{
+            // include: [
+            //     {
+            //         model: User,
+            //         attributes: ["username"], 
+            //     },
+            //     { model: Comment}
+            // ]
+        }); 
+        // const onePost = onePostData.map((post) => post.get({ plain: true }));
+        res.json(onePostData); 
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.post("/", withAuth, async (req, res) => {
     try {
         const newPost = await Post.create({
             // Placeholder until frontend FETCH requests are made - to be replaced with [...req.body] later
-            title: req.body.title,
-            post_text: req.body.post_text,
+            ...req.body,
             user_id: req.session.user_id,
         });
+        console.log(newPost); 
         res.status(200).json(newPost);
     } catch (err) {
-        res.status(500).json(err);
+        res.status(400).json(err);
     }
 });
 

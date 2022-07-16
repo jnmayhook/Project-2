@@ -14,6 +14,7 @@ const newPostHandler = async (event) => {
       });
   
       if (response.ok) {
+        console.log("Response okay"); 
         document.location.replace('/');
       } else {
         alert('Failed to create post');
@@ -22,4 +23,4 @@ const newPostHandler = async (event) => {
   };
 
   document
-  .querySelector('#create-post-form').addEventListener('submit', newPostHandler);
+  .querySelector('.create-post-form').addEventListener('submit', newPostHandler);
