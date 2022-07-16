@@ -12,7 +12,7 @@ const signupForm= async(event)=> {
         });
         
         if(response.ok){
-            document.location.replace('/createpost');
+            document.location.replace('/user');
         }else{
             alert(response.statusText);
         }

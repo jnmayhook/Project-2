@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
         console.log(posts)
         res.render('homepage', {
             posts,
-            logged_in: req.session.logged
+            logged_in: req.session.logged_in
         })
 
     } catch (err) {
@@ -28,10 +28,10 @@ router.get('/', async (req, res) => {
 
 router.get('/login', (req, res) => {
     /*// If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }*/
+    // if (req.session.logged_in) {
+    //   res.redirect('/profile');
+    //   return;
+    // }*/
     res.render('login');
 });
 
@@ -60,6 +60,29 @@ router.get('/viewpost', withAuth, (req, res) => {
       return;
     }*/
     res.render('createpost');
+});
+router.get('/user', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        });
+
+        const posts = postData.map((posts) => posts.get({ plain: true }));
+
+        console.log(posts)
+        res.render('user', {
+            posts,
+            logged_in: req.session.logged_in
+        })
+
+    } catch (err) {
+        res.status(500).json(err)
+    }
 });
 
 module.exports = router;
