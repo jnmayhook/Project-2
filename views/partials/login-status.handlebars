@@ -1,0 +1,16 @@
+{{#if logged_in}}
+<h4>Welcome,</h4>
+<h6><i>{{username}}</i></h6>
+<hr />
+<h5>Forum Tools</h5>
+<p><a href="/">Show Posts</a>
+</p>
+{{else}}
+<h3>Have we met?</h3>
+<p>Please
+  <a href="login">sign in</a>
+  to your account or
+  <a href="signup">create an account</a>
+  to join the conversation.
+</p>
+{{/if}}
