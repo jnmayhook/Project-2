@@ -16,7 +16,7 @@ const loginForm = async (event) => {
 
     //if response is acceptable, replace the doc link with /
     if (response.ok) {
-      document.location.replace('/createpost');
+      document.location.replace('/user');
     } else {
       alert('Failed to log in');
     }
