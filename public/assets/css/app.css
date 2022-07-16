@@ -8,7 +8,11 @@
     justify-content: flex-start;
     background-position: top;
 }
-
+.wrapper-sticky-footer, .wrapper-sticky-footer #create-post-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 #create-post-page .hero-section {
     height: 13vh;
 }
@@ -112,6 +116,7 @@ textarea {
     justify-content: center;
     align-items: flex-end;
     text-align: center;
+    margin-top: auto; /* sticky footer */
 
 }
 

@@ -1,4 +1,5 @@
-<div id="create-post-page">
+<div class="wrapper-sticky-footer">
+   <div id="create-post-page">
       <div class="hero-section">
          <div class="grid-container">
             <div class="grid-x grid-padding-x grid-padding-y align-justify header">
@@ -382,16 +383,22 @@
                <form class="create-post-form" id="create-post-form">
                   <label>
                      Post Title
-                     <input type="text" id="postTitle">
+                     <textarea id='postTitle' name='postTitle' rows='2' cols='30'>
+                     {{postTitle}}
+                     </textarea>
+                     
                   </label>
 
                   <label>
                      What's on your mind?
-                     <textarea type="text" placeholder="Write something.." rows="10"  id="postBody"></textarea>
+                     <textarea id='postBody' name='postBody' rows='5' cols='30' placeholder="Write something..">
+                     {{postBody}}
+                     </textarea>
                   </label>
                   {{!-- <label for="exampleFileUpload" class="button upload-file">Upload File</label>
                   <input type="file" id="exampleFileUpload" class="show-for-sr"> --}}
-                  <input type="submit" class="button orange expanded post-form" value="Create Post" style="width:100%;"></input>
+                  <input type="submit" class="button orange expanded post-form" value="Create Post"
+                     style="width:100%;"></input>
                </form>
             </div>
          </div>
@@ -408,5 +415,5 @@
          </div>
       </div>
    </div>
-
-   <script src="/assets/js/logout.js"></script>
+</div>
+<script src="/assets/js/logout.js"></script>
