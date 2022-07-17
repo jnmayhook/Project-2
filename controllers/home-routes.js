@@ -62,13 +62,17 @@ router.get('/viewpost/:id', async (req, res) => {
     try {
         const onePostData = await Post.findByPk(req.params.id, {
             include: [
+                // {
+                //     model: Comment, 
+                //     include: {
+                //         model: User, 
+                //         attributes: ["username"]
+                //     }
+                // },
                 {
-                    model: Comment, 
-                    include: {
-                        model: User, 
-                        attributes: ["username"]
-                    }
-                }
+                    model: User,
+                    attributes: ['username'],
+                },
             ]
         });
 
