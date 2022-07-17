@@ -56,13 +56,13 @@ router.post("/", withAuth, async (req, res) => {
 router.put("/:id", withAuth, async (req, res) => {
     try {
         const updatedPost = await Post.update({
-            //Placeholder
             title: req.body.title,
             post_text: req.body.post_text
         },
             {
                 where: {
                     id: req.params.id,
+                    user_id: req.session.user_id
                 }
             });
 
