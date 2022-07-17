@@ -53,15 +53,14 @@ router.get('/createpost', withAuth, (req, res) => {
     res.render('createpost');
 });
 
-router.get('/viewpost/:id', withAuth, (req, res) => {
+router.get('/viewpost/:id', async (req, res) => {
     /*// If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
       res.redirect('/profile');
       return;
     }*/
     try {
-        const onePostData = Post.findByPk(req.params.id, {
-            attributes: [ "id", "title", "post_text"],
+        const onePostData = await Post.findByPk(req.params.id, {
             include: [
                 {
                     model: Comment, 
@@ -75,13 +74,38 @@ router.get('/viewpost/:id', withAuth, (req, res) => {
 
         const onePost = onePostData.get({ plain: true });
         res.render('viewpost', {
-            onePost
+            ...onePost, 
+           
         });
     } catch (err) {
         res.status(500).json(err);
-    }
-    
+    }    
 });
+
+router.get("/editpost/:id", withAuth, async (req, res) => {
+    try {
+        const editPostData = await Post.findOne({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id
+            }
+        }); 
+
+        if (!editPostData) {
+            res.status(404).json({ message: "You cannot edit this post." });
+            return;
+        }; 
+
+        const editPost = editPostData.get({ plain: true }); 
+        res.render("editpost", {
+            editPost, 
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
 router.get('/user', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
