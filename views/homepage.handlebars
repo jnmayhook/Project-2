@@ -36,11 +36,11 @@
           <!-- Sample post content -->
           {{#each posts as |post|}}
           <div class="post-item">
-            <a href="#" class="post-thumbnail">
+            {{!-- <a href="#" class="post-thumbnail">
               <img src="https://static.pexels.com/photos/370018/pexels-photo-370018.jpeg" alt="" />
-            </a>
+            </a> --}}
             <div class="post-text">
-              <a href="#">
+              <a href="/viewpost/{{id}}">
                 <h3 class="post-title">{{post.title}}</h3>
               </a>
               <div class="post-meta">
@@ -58,7 +58,11 @@
             </div>
           </div>
           {{/each}}
-          <script src="./js/profile.js"></script>
+
+          {{> comment-section}}
+          
+
+          {{!-- <script src="./js/profile.js"></script> What is this?  It doesn't go anywhere and can't find the JS file. --}}
 
         </div>
       </div>
@@ -77,4 +81,4 @@
   </div>
 </div>
 
-<script src="/assets/js/logout.js"></script>
+{{!-- <script src="/assets/js/logout.js"></script> this is being loaded twice, first time in main.handlebars. --}}

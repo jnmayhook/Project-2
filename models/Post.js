@@ -25,7 +25,7 @@ Post.init(
                 key: 'id',
             },
         }
-    }, 
+    },
     {
         sequelize,
         timestamps: false,
@@ -33,6 +33,6 @@ Post.init(
         underscored: true,
         modelName: "post"
     }
-); 
+);
 
 module.exports = Post; 

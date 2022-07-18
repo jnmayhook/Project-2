@@ -3,7 +3,6 @@
     background-size: cover;
     height: 40vh;
     text-align: center;
-    -webkit-align-items: center;
     flex-direction: column;
     justify-content: flex-start;
     background-position: top;
@@ -224,7 +223,6 @@ p {
     color: #c0771b;
 }
 
-.have-we-met {}
 
 .have-we-met h3 {
     font-family: 'Merriweather', serif;

@@ -59,7 +59,7 @@ router.get('/viewpost', withAuth, (req, res) => {
       res.redirect('/profile');
       return;
     }*/
-    res.render('createpost');
+    res.render('viewpost');
 });
 router.get('/user', withAuth, async (req, res) => {
     try {

@@ -5,7 +5,7 @@ const userPosts = require("./userPosts");
 
 router.use('/', homeRoutes); 
 router.use('/api', apiRoutes); 
-router.use("./userposts", userPosts); 
+router.use("./userPosts", userPosts); 
 
 
 module.exports = router
