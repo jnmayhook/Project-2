@@ -27,7 +27,7 @@ const seedDatabase = async () => {
       //     ...comment,
       //     user_id: users[Math.floor(Math.random() * users.length)].id
       //   })
-      // }
+      // } How do I add a post_id?^^^
     
       process.exit(0);
 }
