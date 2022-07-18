@@ -1,0 +1,26 @@
+{{#each comments as |comment|}}
+<div class="post-item">
+  <div class="comment-text">
+    <h3 class="comment-title">{{comment.user_id}} says:</h3>
+    <div class="comment-summary">
+      <p>{{comment.comment_text}}
+      </p>
+    </div>
+  </div>
+</div>
+{{/each}}
+
+<form class="create-comment" id="create-comment">
+  <label>
+    Comment
+    <textarea id='commentText' name='commentText' rows='5' cols='30' placeholder="Write something..">{{comment_text}}</textarea>
+  </label>
+  <label>
+    Name
+    <textarea id='commentName' name='commentName' rows='1'>{{user_id}}</textarea>
+  </label>
+
+  <input type="submit" class="button orange expanded post-form" value="Create Comment" style="width:100%;"></input>
+</form>
+
+
