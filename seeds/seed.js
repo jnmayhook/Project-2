@@ -1,8 +1,10 @@
 const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 const postData = require('./postData.json');
 const userData = require('./userData.json');
+const commentData = require("./commentData.json");
+const { post } = require('../controllers/home-routes');
 
 
 const seedDatabase = async () => {
@@ -18,7 +20,14 @@ const seedDatabase = async () => {
           ...post,
           user_id: users[Math.floor(Math.random() * users.length)].id,
         });
-      }
+      }; 
+
+      // for (const comment of commentData) {
+      //   await Comment.create({
+      //     ...comment,
+      //     user_id: users[Math.floor(Math.random() * users.length)].id
+      //   })
+      // } How do I add a post_id?^^^
     
       process.exit(0);
 }
