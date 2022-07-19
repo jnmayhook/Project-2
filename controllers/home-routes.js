@@ -50,7 +50,7 @@ router.get('/createpost', withAuth, (req, res) => {
       res.redirect('/profile');
       return;
     }*/
-    
+
     res.render('createpost');
 });
 
@@ -61,28 +61,30 @@ router.get('/viewpost/:id', async (req, res) => {
       return;
     }*/
     // try {
-        const onePostData = await Post.findByPk(req.params.id, {
-            include: [
-                {
-                    model: Comment, 
-                    // include: {
-                    //     model: User, 
-                    //     attributes: ["username"]
-                    // }
-                },
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ]
-        });
+    const onePostData = await Post.findByPk(req.params.id, {
+        include: [
+            {
+                model: Comment,
+                include: [
+                    {
+                        model: User,
+                        attributes: ["username"]
+                    }
+                ]
+            },
+            {
+                model: User,
+                attributes: ['username'],
+            },
+        ]
+    });
 
-        const onePost = onePostData.get({ plain: true });
-        console.log(onePost)
-        res.render('viewpost', {
-            ...onePost, 
-           
-        });
+    const onePost = onePostData.get({ plain: true });
+    console.log(onePost)
+    res.render('viewpost', {
+        ...onePost,
+
+    });
     // } catch (err) {
     //     res.status(500).json(err);
     // }    
@@ -95,16 +97,16 @@ router.get("/editpost/:id", withAuth, async (req, res) => {
                 id: req.params.id,
                 user_id: req.session.user_id
             }
-        }); 
+        });
 
         if (!editPostData) {
             res.status(404).json({ message: "You cannot edit this post." });
             return;
-        }; 
+        };
 
-        const editPost = editPostData.get({ plain: true }); 
+        const editPost = editPostData.get({ plain: true });
         res.render("editpost", {
-            editPost, 
+            editPost,
             logged_in: true
         });
     } catch (err) {
