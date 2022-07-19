@@ -78,8 +78,7 @@ router.get('/viewpost/:id', async (req, res) => {
 
         const onePost = onePostData.get({ plain: true });
         res.render('viewpost', {
-            ...onePost, 
-           
+            ...onePost
         });
     } catch (err) {
         res.status(500).json(err);

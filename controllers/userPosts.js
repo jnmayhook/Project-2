@@ -22,23 +22,23 @@ router.get("/", withAuth, (res, req) => {
 }); 
 
 // TEST: for viewing the posts of other users
-router.get("/:id", (res, req) => {
-    try {
-        let userPostData = Post.findAll({
-            where: {
-                user_id: req.params.user_id
-            }, 
-            attributes: [ "title", "post_text" ]
-        }); 
+// router.get("/:id", (res, req) => {
+//     try {
+//         let userPostData = Post.findAll({
+//             where: {
+//                 user_id: req.params.user_id
+//             }, 
+//             attributes: [ "title", "post_text" ]
+//         }); 
 
-        let allUserPosts = userPostData.map((postData) => postData.get({ plain: true }));
+//         let allUserPosts = userPostData.map((postData) => postData.get({ plain: true }));
 
-        res.render("", {
-            allUserPosts
-        }); 
-    } catch (err) {
-        res.status(500).json(err); 
-    }
-})
+//         res.render("", {
+//             allUserPosts
+//         }); 
+//     } catch (err) {
+//         res.status(500).json(err); 
+//     }
+// })
 
 module.exports = router; 
