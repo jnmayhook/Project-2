@@ -24,7 +24,7 @@
         </a> }}
         <div class="post-text">
           <a href="/viewpost/{{id}}">
-            <h3 class="post-title">{{post.title}}</h3>
+            <h3 class="post-title">{{title}}</h3>
           </a>
           <div class="post-meta">
             <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a
@@ -33,13 +33,16 @@
                 class="meta-text">22/06/2030</span></span> }}
           </div>
           <div class="post-summary">
-            <p>{{post.post_text}}
+            <p>{{post_text}}
               <a href="#" class="post-read-more">Read more<span class="fa fa-chevron-circle-right"
                   aria-hidden="true"></span></a>
             </p>
           </div>
         </div>
       </div>
+
+      {{> comment-section}}
+
     </div>
   </div>
 </div>
@@ -56,4 +59,5 @@
   </div>
 </div>
 <script src="/assets/js/logout.js"></script>
-<script src="./assets/js/createpost.js"></script>
+<script src="/assets/js/createpost.js"></script>
+<script src="/assets/js/createcomment.js"></script>
