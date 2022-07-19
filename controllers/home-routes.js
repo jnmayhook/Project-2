@@ -59,7 +59,7 @@ router.get('/viewpost/:id', async (req, res) => {
       res.redirect('/profile');
       return;
     }*/
-    try {
+    // try {
         const onePostData = await Post.findByPk(req.params.id, {
             include: [
                 {
@@ -77,13 +77,14 @@ router.get('/viewpost/:id', async (req, res) => {
         });
 
         const onePost = onePostData.get({ plain: true });
+        console.log(onePost)
         res.render('viewpost', {
             ...onePost, 
            
         });
-    } catch (err) {
-        res.status(500).json(err);
-    }    
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }    
 });
 
 router.get("/editpost/:id", withAuth, async (req, res) => {
