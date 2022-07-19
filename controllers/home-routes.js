@@ -50,6 +50,7 @@ router.get('/createpost', withAuth, (req, res) => {
       res.redirect('/profile');
       return;
     }*/
+    
     res.render('createpost');
 });
 
