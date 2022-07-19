@@ -17,7 +17,10 @@ router.get("/", async (req, res) => {
 
             ]
         })
-    } catch (err) { }
+        res.json(allComments)
+    } catch (err) {
+        res.status(500).json(err); 
+    }
 })
 
 router.post("/", withAuth, async (req, res) => {
@@ -28,7 +31,7 @@ router.post("/", withAuth, async (req, res) => {
             post_id: req.body.post_id,
             user_id: req.session.user_id
         });
-        res.status(200).json(newPost);
+        res.status(200).json(newComment);
         console.log(newComment)
 
     // } catch (err) {
