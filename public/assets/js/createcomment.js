@@ -1,15 +1,17 @@
-const newPostHandler = async (event) => {
+const newCommentHandler = async (event) => {
   event.preventDefault();
-alert("some text")
+
   const comment_text = document.querySelector('#commentText').value.trim();
-  const comment_name = document.querySelector('#commentName').value.trim();
-console.log(comment_text, comment_name)
-const post_id = location.search
-console.log(post_id)
-  if (comment_text && comment_name) {
+  // const comment_name = document.querySelector('#commentName').value.trim();
+console.log(comment_text);
+
+const post_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+console.log(post_id);
+
+if (comment_text) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({ comment_text }),
+      body: JSON.stringify({ post_id, comment_text }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -17,7 +19,7 @@ console.log(post_id)
 
     if (response.ok) {
       console.log("Response okay");
-      document.location.replace('/');
+      document.location.reload();
     } else {
       alert('Failed to create comment');
     }
@@ -25,4 +27,4 @@ console.log(post_id)
 };
 
 document
-  .querySelector('.create-comment').addEventListener('submit', newPostHandler);
+  .querySelector('.create-comment').addEventListener('submit', newCommentHandler);
