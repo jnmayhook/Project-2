@@ -122,7 +122,7 @@ router.get('/user', withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id
             },
-            attributes: ["title"],
+            // attributes: ["title"],
         });
 
         const posts = postData.map((posts) => posts.get({ plain: true }));
