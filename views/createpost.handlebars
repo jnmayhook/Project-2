@@ -1,0 +1,56 @@
+<div class="grid-container">
+   <div class="grid-x grid-padding-x grid-padding-y">
+      <div class="large-12 cell forum-title">
+         <h2 class="text-center">Web Developer Forum</h2>
+      </div>
+      <div class="large-12 cell breadcrumbs-wrap">
+         <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs">
+               <li><a href="/">Forum Home</a></li>
+               <li>
+                  <span class="show-for-sr">Current: </span> Create Post
+               </li>
+            </ul>
+         </nav>
+      </div>
+      <div class="large-3 medium-4 cell have-we-met">
+         {{> login-status}}
+      </div>
+      <div class="large-9 medium-8 cell">
+         <form class="create-post-form" id="create-post-form">
+            <label>
+               Post Title
+               <textarea id='postTitle' name='postTitle' rows='2' cols='30'>
+                     {{postTitle}}
+                     </textarea>
+
+            </label>
+
+            <label>
+               What's on your mind?
+               <textarea id='postBody' name='postBody' rows='5' cols='30' placeholder="Write something..">
+                     {{postBody}}
+                     </textarea>
+            </label>
+            {{!-- <label for="exampleFileUpload" class="button upload-file">Upload File</label>
+            <input type="file" id="exampleFileUpload" class="show-for-sr"> --}}
+            <input type="submit" class="button orange expanded post-form" value="Create Post"
+               style="width:100%;"></input>
+         </form>
+      </div>
+   </div>
+</div>
+
+
+<div class="grid-x grid-padding-x grid-padding-y footer">
+   <div class="large-12 medium-12 cell">
+      <ul class="menu">
+         <li class="hide-for-small-only border-right"><a href="/index">Home</a></li>
+         <li class="hide-for-small-only border-right"><a href="/login">Log in</a></li>
+         <li class="hide-for-small-only border-right"><a href="/signup">Sign up</a></li>
+         <li class="hide-for-small-only"><a href="/">&copy;2022 Collective Cup, Inc.</a></li>
+      </ul>
+   </div>
+</div>
+<script src="/assets/js/logout.js"></script>
+<script src="/assets/js/createpost.js"></script>

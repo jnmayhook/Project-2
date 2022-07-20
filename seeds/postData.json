@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "What is the difference between sessions and cookies?",
+        "post_text": "Cookies are client-side files on a local computer that hold user information and end on the lifetime set by the user. Sessions are are server-side files that contain user data; and when the user quits the browser or logs out of the programmed, the session is over.."
+    },
+    {
+        "id": 2,
+        "title": "How does JavaScript know when a function is asynchronous?",
+        "post_text": "An async function is a function declared with the async keyword, and the await keyword is permitted within it. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains. Async functions may also be defined as expressions."
+    },
+    {
+        "id": 3,
+        "title": "Express Sessions with MySQL and Sequelize",
+        "post_text": "Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32."
+    },
+    {
+        "id": 4,
+        "title": "What are some examples of middleware used in Node applications?",
+        "post_text": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+    }
+]

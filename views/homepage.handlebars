@@ -1,0 +1,103 @@
+<div class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y">
+    <div class="large-12 cell forum-title">
+      <h2 class="text-center">Web Developer Forum</h2>
+    </div>
+    <div class="large-12 cell breadcrumbs-wrap">
+      <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+          <li><a href="/">Home</a></li>
+          <li>
+            <span class="show-for-sr">Current: </span>
+            Welcome to the Forum
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="large-3 medium-4 cell have-we-met">
+      {{> login-status}}
+    </div>
+    <div class="large-9 medium-8 cell posts-wrap">
+
+      <!-- Posts panel container -->
+      <div class="posts-panel">
+
+        <!-- Panel's header -->
+        <header class="panel-header">
+          <h2 class="panel-title">Welcome to the Forum</h2>
+        </header>
+
+        <!-- Panel's content -->
+        <div class="panel-content">
+
+          {{!-- All posts go here {{#each posts as |post|}}{{/each}} --}}
+
+          <!-- Sample post content -->
+          {{#each posts as |post|}}
+          <div class="post-item">
+            {{!-- <a href="#" class="post-thumbnail">
+              <img src="https://static.pexels.com/photos/370018/pexels-photo-370018.jpeg" alt="" />
+            </a> --}}
+            <div class="post-text">
+              <a href="/viewpost/{{id}}">
+                <h3 class="post-title">{{post.title}}</h3>
+              </a>
+              <div class="post-meta">
+                <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a
+                    class="meta-text">{{username}}</a></span>
+                {{!-- <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
+                    class="meta-text">22/06/2030</span></span> --}}
+              </div>
+              <div class="post-summary">
+                <p>{{post.post_text}}
+                  <a href="/viewpost/{{id}}" class="post-read-more">Read more</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+
+
+
+          {{!--
+          <script src="./js/profile.js"></script> What is this? It doesn't go anywhere and can't find the JS file. --}}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="full marketing-wrap">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell small-4 marketing"><i class='fas fa-coffee' style='font-size:48px;color:#c0771b'></i>
+        <h4>Meaningful Connections</h4>
+        <p>Meaningful connections are at the Collective Cup's core. Build lasting relationships with fellow developers and gain inspiration while becoming part of a diverse community from across the globe.</p>
+      </div>
+      <div class="cell small-4 marketing"><i class='fas fa-sitemap' style='font-size:48px;color:#c0771b'></i>
+        <h4>Powerful Network</h4>
+        <p>Collective Cup is an invaluable tool for advancing your career. Gain access to the latest content and resources to stay ahead. Collective Cup connects you with Developers from around the world.</p>
+      </div>
+      <div class="cell small-4 marketing"><i class='fas fa-comments' style='font-size:48px;color:#c0771b'></i>
+        <h4>Highest Quality Conversation</h4>
+        <p>Conversations in Collective Cup are ones you'll have difficulty finding elsewhere. This is because we have experienced developers focusing on diversity and different skill levels; everyone gains perspective from varying viewpoints.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid-x grid-padding-x grid-padding-y footer">
+  <div class="large-12 medium-12 cell">
+    <ul class="menu">
+      <li class="hide-for-small-only border-right"><a href="/">Home</a></li>
+      <li class="hide-for-small-only border-right"><a href="login">Log in</a></li>
+      <li class="hide-for-small-only border-right"><a href="signup">Sign up</a></li>
+      <li class="hide-for-small-only"><a href="/">&copy;2022 Collective Cup,
+          Inc.</a></li>
+    </ul>
+  </div>
+</div>
+
+{{!--
+<script src="/assets/js/logout.js"></script> this is being loaded twice, first time in main.handlebars. --}}
