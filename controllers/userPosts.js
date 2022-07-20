@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, (res, req) => {
+router.get("/", (res, req) => {
     try {
         let userPostData = Post.findAll({
             where: {
@@ -13,8 +13,9 @@ router.get("/", withAuth, (res, req) => {
 
         let allUserPosts = userPostData.map((postData) => postData.get({ plain: true })); 
 
-        res.render("", {
-            allUserPosts
+        res.render("user", {
+            allUserPosts,
+            logged_in: true
         })
     } catch (err) {
         res.status(500).json(err);
