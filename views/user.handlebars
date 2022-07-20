@@ -19,6 +19,29 @@
       <div class="large-9 medium-8 cell">
 
          {{!-- Users posts go here --}}
+         {{#each posts as |post|}}
+          <div class="post-item">
+            {{!-- <a href="#" class="post-thumbnail">
+              <img src="https://static.pexels.com/photos/370018/pexels-photo-370018.jpeg" alt="" />
+            </a> --}}
+            <div class="post-text">
+              <a href="/viewpost/{{id}}">
+                <h3 class="post-title">{{post.title}}</h3>
+              </a>
+              <div class="post-meta">
+                <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a
+                    class="meta-text">{{username}}</a></span>
+                {{!-- <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
+                    class="meta-text">22/06/2030</span></span> --}}
+              </div>
+              <div class="post-summary">
+                <p>{{post.post_text}}
+                  <a href="/viewpost/{{id}}" class="post-read-more">Read more</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
 
       </div>
    </div>
