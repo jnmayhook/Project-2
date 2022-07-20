@@ -47,7 +47,16 @@
 .marketing {
 
 }
-
+.post-item.comment {
+    padding: 10px 0;
+    border-top: 1px solid gray;
+    margin-top: 10px;
+}
+.create-comment {
+    padding: 20px 0;
+    border-top: 1px solid gray;
+    margin-top: 10px;
+}
 #login-page .hero-section-text h5,
 #signup-page .hero-section-text h5 {
     padding: 20px 0px 40px 0px;

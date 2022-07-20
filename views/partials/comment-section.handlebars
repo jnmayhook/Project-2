@@ -1,7 +1,7 @@
 {{#each comments as |comment|}}
-<div class="post-item">
+<div class="post-item comment">
   <div class="comment-text">
-    <h3 class="comment-title">{{user.username}} says:</h3>
+    <h6 class="comment-title">{{user.username}} says:</h6>
     <div class="comment-summary">
       <p>{{comment.comment_text}}
       </p>
@@ -10,6 +10,9 @@
 </div>
 {{/each}}
 {{post_id}}
+
+
+{{#if logged_in}}
 <form class="create-comment" id="create-comment">
   <label>
     Comment
@@ -22,6 +25,8 @@
 
   <input type="submit" class="button orange expanded post-form" value="Create Comment" style="width:100%;"></input>
 </form>
-
+{{else}}
+Please <a href="/login">Log in</a> to make comments. 
+{{/if}}
 
 <script src="/assets/js/createcomment.js"></script>
