@@ -51,23 +51,42 @@
               </div>
               <div class="post-summary">
                 <p>{{post.post_text}}
-                  <a href="#" class="post-read-more">Read more<span class="fa fa-chevron-circle-right"
-                      aria-hidden="true"></span></a>
+                  <a href="/viewpost/{{id}}" class="post-read-more">Read more</a>
                 </p>
               </div>
             </div>
           </div>
           {{/each}}
 
-          
 
-          {{!-- <script src="./js/profile.js"></script> What is this?  It doesn't go anywhere and can't find the JS file. --}}
+
+          {{!--
+          <script src="./js/profile.js"></script> What is this? It doesn't go anywhere and can't find the JS file. --}}
 
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="full marketing-wrap">
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell small-4 marketing"><i class='fas fa-coffee' style='font-size:48px;color:#c0771b'></i>
+        <h4>Meaningful Connections</h4>
+        <p>Meaningful connections are at the Collective Cup's core. Build lasting relationships with fellow developers and gain inspiration while becoming part of a diverse community from across the globe.</p>
+      </div>
+      <div class="cell small-4 marketing"><i class='fas fa-sitemap' style='font-size:48px;color:#c0771b'></i>
+        <h4>Powerful Network</h4>
+        <p>Collective Cup is an invaluable tool for advancing your career. Gain access to the latest content and resources to stay ahead. Collective Cup connects you with Developers from around the world.</p>
+      </div>
+      <div class="cell small-4 marketing"><i class='fas fa-comments' style='font-size:48px;color:#c0771b'></i>
+        <h4>Highest Quality Conversation</h4>
+        <p>Conversations in Collective Cup are ones you'll have difficulty finding elsewhere. This is because we have experienced developers focusing on diversity and different skill levels; everyone gains perspective from varying viewpoints.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="grid-x grid-padding-x grid-padding-y footer">
   <div class="large-12 medium-12 cell">
     <ul class="menu">
@@ -80,4 +99,5 @@
   </div>
 </div>
 
-{{!-- <script src="/assets/js/logout.js"></script> this is being loaded twice, first time in main.handlebars. --}}
+{{!--
+<script src="/assets/js/logout.js"></script> this is being loaded twice, first time in main.handlebars. --}}
