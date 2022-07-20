@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
                         attributes: { exclude: ["password"] },
                     }
                 },
-
+                
             ]
         })
         res.json(allComments)
