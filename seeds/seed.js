@@ -33,5 +33,3 @@ const seedDatabase = async () => {
 }
 
 seedDatabase();
-
-

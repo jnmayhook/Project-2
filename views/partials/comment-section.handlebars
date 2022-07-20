@@ -10,6 +10,9 @@
 </div>
 {{/each}}
 {{post_id}}
+
+
+{{#if logged_in}}
 <form class="create-comment" id="create-comment">
   <label>
     Comment
@@ -22,6 +25,8 @@
 
   <input type="submit" class="button orange expanded post-form" value="Create Comment" style="width:100%;"></input>
 </form>
-
+{{else}}
+Please <a href="/login">Log in</a> to make comments. 
+{{/if}}
 
 <script src="/assets/js/createcomment.js"></script>
