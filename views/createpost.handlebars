@@ -1,3 +1,7 @@
+{{> login-status-header}}
+
+{{> hero-section}}
+
 <div class="grid-container">
    <div class="grid-x grid-padding-x grid-padding-y">
       <div class="large-12 cell forum-title">
@@ -16,11 +20,15 @@
       <div class="large-3 medium-4 cell have-we-met">
          {{> login-status}}
       </div>
-      <div class="large-9 medium-8 cell">
+      <div class="large-9 medium-8 cell mt-neg-40">
+         <!-- Panel's header -->
+        <header class="panel-header">
+          <h2 class="panel-title">Add New Post</h2>
+        </header>
          <form class="create-post-form" id="create-post-form">
             <label>
                Post Title
-               <textarea id='postTitle' name='postTitle' rows='2' cols='30'>
+               <textarea id='postTitle' name='postTitle' rows='1' cols='30'>
                      {{postTitle}}
                      </textarea>
 
@@ -35,7 +43,8 @@
             {{!-- <label for="exampleFileUpload" class="button upload-file">Upload File</label>
             <input type="file" id="exampleFileUpload" class="show-for-sr"> --}}
             <input type="submit" class="button orange expanded post-form" value="Create Post"
-               style="width:100%;"></input>
+               style="width:100%;">
+               </input>
          </form>
       </div>
    </div>
