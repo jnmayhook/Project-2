@@ -1,3 +1,7 @@
+{{> login-status-header}}
+
+{{> hero-section}}
+
 <div class="grid-container">
   <div class="grid-x grid-padding-x grid-padding-y">
     <div class="large-12 cell forum-title">
@@ -44,10 +48,9 @@
                 <h3 class="post-title">{{post.title}}</h3>
               </a>
               <div class="post-meta">
-                <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a
-                    class="meta-text">{{username}}</a></span>
-                {{!-- <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
-                    class="meta-text">22/06/2030</span></span> --}}
+                <span class="meta">
+                 <i>by <a class="meta-text">{{user.username}}</a></i>
+                </span>
               </div>
               <div class="post-summary">
                 <p>{{post.post_text}}
@@ -73,15 +76,19 @@
     <div class="grid-x grid-margin-x">
       <div class="cell small-4 marketing"><i class='fas fa-coffee' style='font-size:48px;color:#c0771b'></i>
         <h4>Meaningful Connections</h4>
-        <p>Meaningful connections are at the Collective Cup's core. Build lasting relationships with fellow developers and gain inspiration while becoming part of a diverse community from across the globe.</p>
+        <p>Meaningful connections are at the Collective Cup's core. Build lasting relationships with fellow developers
+          and gain inspiration while becoming part of a diverse community from across the globe.</p>
       </div>
       <div class="cell small-4 marketing"><i class='fas fa-sitemap' style='font-size:48px;color:#c0771b'></i>
         <h4>Powerful Network</h4>
-        <p>Collective Cup is an invaluable tool for advancing your career. Gain access to the latest content and resources to stay ahead. Collective Cup connects you with Developers from around the world.</p>
+        <p>Collective Cup is an invaluable tool for advancing your career. Gain access to the latest content and
+          resources to stay ahead. Collective Cup connects you with Developers from around the world.</p>
       </div>
       <div class="cell small-4 marketing"><i class='fas fa-comments' style='font-size:48px;color:#c0771b'></i>
         <h4>Highest Quality Conversation</h4>
-        <p>Conversations in Collective Cup are ones you'll have difficulty finding elsewhere. This is because we have experienced developers focusing on diversity and different skill levels; everyone gains perspective from varying viewpoints.</p>
+        <p>Conversations in Collective Cup are ones you'll have difficulty finding elsewhere. This is because we have
+          experienced developers focusing on diversity and different skill levels; everyone gains perspective from
+          varying viewpoints.</p>
       </div>
     </div>
   </div>
