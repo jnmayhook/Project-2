@@ -12,7 +12,7 @@
         <ul class="breadcrumbs">
           <li><a href="/">Forum Home</a></li>
           <li>
-            <span class="show-for-sr">Current: </span> Create Post
+            <span class="show-for-sr">Current: </span> Viewing Post {{id}}
           </li>
         </ul>
       </nav>
@@ -31,8 +31,7 @@
             <h3 class="post-title">{{title}}</h3>
           </a>
           <div class="post-meta">
-            <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span>by <a
-                class="meta-text">{{user.username}}</a></span>
+            <span class="meta"><i>by <a class="meta-text">{{user.username}}</a></i></span>
             {{! <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
                 class="meta-text">22/06/2030</span></span> }}
           </div>
@@ -66,7 +65,7 @@
       <li class="hide-for-small-only border-right"><a href="/index">Home</a></li>
       <li class="hide-for-small-only border-right"><a href="/login">Log in</a></li>
       <li class="hide-for-small-only border-right"><a href="/signup">Sign up</a></li>
-      <li class="hide-for-small-only"><a href="/">&copy;2022 Collective Cup, Inc.</a></li>
+      <li><a href="/">&copy;2022 Collective Cup, Inc.</a></li>
     </ul>
   </div>
 </div>
