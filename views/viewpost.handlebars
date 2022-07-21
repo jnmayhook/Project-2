@@ -1,3 +1,7 @@
+{{> login-status-header}}
+
+{{> hero-section}}
+
 <div class="grid-container">
   <div class="grid-x grid-padding-x grid-padding-y">
     <div class="large-12 cell forum-title">
@@ -16,7 +20,7 @@
     <div class="large-3 medium-4 cell have-we-met">
       {{> login-status}}
     </div>
-    <div class="large-9 medium-8 cell">
+    <div class="large-9 medium-8 cell mt-neg-40">
       <!-- Posts list item -->
       <div class="post-item">
         {{! <a href="#" class="post-thumbnail">
@@ -27,19 +31,28 @@
             <h3 class="post-title">{{title}}</h3>
           </a>
           <div class="post-meta">
-            <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span><a
-                class="meta-text">{{username}}</a></span>
+            <span class="meta"><span class="meta-icon fa fa-user-circle-o" aria-hidden="true"></span>by <a
+                class="meta-text">{{user.username}}</a></span>
             {{! <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
                 class="meta-text">22/06/2030</span></span> }}
           </div>
           <div class="post-summary">
-            <p>{{post_text}}
+            <p>{{post_text}}</p>
               <a href="/" class="post-read-more">Back to the forum</a>
-            </p>
           </div>
         </div>
+
+        {{#if logged_in}}
+        <form class="delete-post" id="delete-post">
+          <input type="submit" class="button orange expanded post-form" value="Delete Post"></input>
+        </form>
+        {{else}}
+        {{/if}}
+
+
+
       </div>
-              
+
       {{> comment-section}}
 
     </div>
@@ -60,3 +73,4 @@
 <script src="/assets/js/logout.js"></script>
 <script src="/assets/js/createpost.js"></script>
 <script src="/assets/js/createcomment.js"></script>
+<script src="/assets/js/deletepost.js"></script>

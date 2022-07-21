@@ -1,10 +1,9 @@
 {{#if logged_in}}
-<h4>Welcome,</h4>
-<h6><i>{{username}}</i></h6>
 <hr />
 <h5>Forum Tools</h5>
-<p><a href="/">Show Posts</a>
-<p><a href="/createpost">Create Posts</a></p>
+<hr />
+<p><a href="/">View All Posts</a>
+<p><a href="/createpost">Add New Post</a></p>
 </p>
 {{else}}
 <h3>Have we met?</h3>
@@ -14,5 +13,5 @@
   <a href="signup">create an account</a>
   to join the conversation.
 </p>
-<p><a href="/createpost">Create Posts</a></p>
+<p><a href="/">Show Posts</a></p>
 {{/if}}

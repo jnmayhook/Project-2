@@ -6,6 +6,7 @@ const newCommentHandler = async (event) => {
 console.log(comment_text);
 
 const post_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+
 console.log(post_id);
 
 if (comment_text) {
