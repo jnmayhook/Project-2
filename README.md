@@ -7,7 +7,7 @@ The app was built using the Model-View-Controllers structure. For the views, the
 
 Since MySQL is a service that requires a password, in order to keep this sensitive information safe when displayed in a public repository, we use the Dotenv module to obscure that within the code when called by Sequelize and MySQL2. Users of the app will also have their passwords encrypted when they are stored within the database using the bcrypt module.
 
-[Click here for the deployed app on Heroku.](https://project-two-group-five.herokuapp.com/)
+[Click here for the deployed app on Heroku.](https://collective-cup.herokuapp.com/)
 
 ### Collaborators 
 - [Adeline Aguspranoto](https://github.com/adelineagus) 
