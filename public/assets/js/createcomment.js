@@ -2,7 +2,7 @@ const newCommentHandler = async (event) => {
   event.preventDefault();
 
   const comment_text = document.querySelector('#commentText').value.trim();
-  // const comment_name = document.querySelector('#commentName').value.trim();
+
 console.log(comment_text);
 
 const post_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];

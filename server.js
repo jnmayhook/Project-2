@@ -22,10 +22,6 @@ const sess = {
       }),
 };
 
-//adding
-//app.use(routes);
-//app.use('/', routes)
-
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

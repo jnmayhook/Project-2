@@ -24,7 +24,6 @@ User.init(
             type: DataTypes.STRING, 
             allowNull: false, 
             validate: {
-                //is: ["^[a-z]+$",'i'], 
                 len: [8]
             }
         }

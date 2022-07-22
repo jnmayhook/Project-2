@@ -27,42 +27,20 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    /*// If the user is already logged in, redirect the request to another route
-    // if (req.session.logged_in) {
-    //   res.redirect('/profile');
-    //   return;
-    // }*/
     res.render('login');
 });
 
 router.get('/signup', (req, res) => {
-    /*// If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }*/
     res.render('signup');
 });
 
 router.get('/createpost', withAuth, (req, res) => {
-    /*// If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }*/
-
     res.render('createpost', {
         logged_in:true
     });
 });
 
 router.get('/viewpost/:id', async (req, res) => {
-    /*// If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }*/
-    // try {
     const onePostData = await Post.findByPk(req.params.id, {
         include: [
             {
@@ -86,10 +64,7 @@ router.get('/viewpost/:id', async (req, res) => {
     res.render('viewpost', {
         ...onePost,
         logged_in:req.session.logged_in
-    });
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }    
+    }); 
 });
 
 router.get("/editpost/:id", withAuth, async (req, res) => {
@@ -122,7 +97,6 @@ router.get('/user', withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id
             },
-            // attributes: ["title"],
         });
 
         const posts = postData.map((posts) => posts.get({ plain: true }));

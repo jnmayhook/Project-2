@@ -24,15 +24,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
         const onePostData = await Post.findByPk(req.params.id,{
-            // include: [
-            //     {
-            //         model: User,
-            //         attributes: ["username"], 
-            //     },
-            //     { model: Comment}
-            // ]
         }); 
-        // const onePost = onePostData.map((post) => post.get({ plain: true }));
         res.json(onePostData); 
     } catch (err) {
         res.status(500).json(err);
