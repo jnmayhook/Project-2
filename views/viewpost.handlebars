@@ -21,26 +21,19 @@
       {{> login-status}}
     </div>
     <div class="large-9 medium-8 cell mt-neg-40">
-      <!-- Posts list item -->
       <div class="post-item">
-        {{! <a href="#" class="post-thumbnail">
-          <img src="https://static.pexels.com/photos/370018/pexels-photo-370018.jpeg" alt="" />
-        </a> }}
         <div class="post-text">
           <a href="/viewpost/{{id}}">
             <h3 class="post-title">{{title}}</h3>
           </a>
           <div class="post-meta">
             <span class="meta"><i>by <a class="meta-text">{{user.username}}</a></i></span>
-            {{! <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
-                class="meta-text">22/06/2030</span></span> }}
           </div>
           <div class="post-summary">
             <p>{{post_text}}</p>
-              <a href="/" class="post-read-more">Back to the forum</a>
+            <a href="/" class="post-read-more">Back to the forum</a>
           </div>
         </div>
-
         {{#if logged_in}}
         <form class="delete-post" id="delete-post">
           <input type="submit" class="button orange expanded post-form" value="Delete Post"></input>
