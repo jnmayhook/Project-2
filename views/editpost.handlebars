@@ -1,0 +1,62 @@
+{{> login-status-header}}
+
+{{> hero-section}}
+
+<div class="grid-container">
+   <div class="grid-x grid-padding-x grid-padding-y">
+      <div class="large-12 cell forum-title">
+         <h2 class="text-center">Web Developer Forum</h2>
+      </div>
+      <div class="large-12 cell breadcrumbs-wrap">
+         <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs">
+               <li><a href="/">Forum Home</a></li>
+               <li>
+                  <span class="show-for-sr">Current: </span> Edit Post
+               </li>
+            </ul>
+         </nav>
+      </div>
+      <div class="large-3 medium-4 cell have-we-met">
+         {{> login-status}}
+      </div>
+      <div class="large-9 medium-8 cell mt-neg-40">
+          <header class="panel-header">
+          <h2 class="panel-title">Edit Post</h2>
+        </header>
+         <form class="edit-post-form" id="edit-post-form">
+            <label>
+               Post Title
+               <textarea id='postTitle' name='postTitle' rows='1' cols='30'>
+                     {{title}}
+                     </textarea>
+
+            </label>
+
+            <label>
+               What's on your mind?
+               <textarea id='postBody' name='postBody' rows='5' cols='30' placeholder="Write something..">
+                     {{post_text}}
+                     </textarea>
+            </label>
+            <input type="submit" class="button orange expanded post-form" value="Edit Post"
+               style="width:100%;">
+               </input>
+         </form>
+      </div>
+   </div>
+</div>
+
+
+<div class="grid-x grid-padding-x grid-padding-y footer">
+   <div class="large-12 medium-12 cell">
+      <ul class="menu">
+         <li class="hide-for-small-only border-right"><a href="/index">Home</a></li>
+         <li class="hide-for-small-only border-right"><a href="/login">Log in</a></li>
+         <li class="hide-for-small-only border-right"><a href="/signup">Sign up</a></li>
+         <li><a href="/">&copy;2022 Collective Cup, Inc.</a></li>
+      </ul>
+   </div>
+</div>
+<script src="/assets/js/logout.js"></script>
+<script src="/assets/js/editpost.js"></script>
