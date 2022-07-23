@@ -21,38 +21,34 @@
          {{> login-status}}
       </div>
       <div class="large-9 medium-8 cell mt-neg-40 posts-wrap">
-         <!-- Posts panel container -->
-      <div class="posts-panel">
-         <header class="panel-header">
-          <h2 class="panel-title">Profile - My Posts</h2>
-        </header>
-         <!-- Panel's content -->
-        <div class="panel-content">
-         {{!-- Users posts go here --}}
-         {{#each posts as |post|}}
-          <div class="post-item">
-            {{!-- <a href="#" class="post-thumbnail">
-              <img src="https://static.pexels.com/photos/370018/pexels-photo-370018.jpeg" alt="" />
-            </a> --}}
-            <div class="post-text">
-              <a href="/viewpost/{{id}}">
-                <h3 class="post-title">{{post.title}}</h3>
-              </a>
-              <div class="post-meta">
-                <span class="meta"><a class="meta-text">{{user.username}}</a></span>
-                {{!-- <span class="meta"><span class="meta-icon fa fa-clock-o" aria-hidden="true"></span><span
-                    class="meta-text">22/06/2030</span></span> --}}
-              </div>
-              <div class="post-summary">
-                <p>{{post.post_text}}</p>
-                  <a href="/viewpost/{{id}}" class="post-read-more">Read more</a>
-                
-              </div>
+
+         <div class="posts-panel">
+            <header class="panel-header">
+               <h2 class="panel-title">Profile - My Posts</h2>
+            </header>
+            <div class="panel-content">
+               {{#each posts as |post|}}
+               <div class="post-item">
+                  <div class="post-text">
+                     <a href="/viewpost/{{id}}">
+                        <h3 class="post-title">{{post.title}}</h3>
+                     </a>
+                     <div class="post-meta">
+                        <span class="meta"><a class="meta-text">{{user.username}}</a></span>
+                     </div>
+                     <div class="post-summary">
+                        <p>{{post.post_text}}</p>
+                        <a href="/viewpost/{{id}}" class="post-read-more">Read more</a>
+                     </div>
+                  </div>
+                  <form>
+                     <a href="/editpost/{{id}}"><input type="click" class="button orange expanded post-form"
+                           value="Edit Post"></input></a>
+                  </form>
+               </div>
+               {{/each}}
             </div>
-          </div>
-          {{/each}}
-          </div>
-</div>
+         </div>
       </div>
    </div>
 </div>
@@ -67,3 +63,5 @@
       </ul>
    </div>
 </div>
+
+<script src="/assets/js/editpost.js"></script>
