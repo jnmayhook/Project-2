@@ -17,7 +17,7 @@ const editPostHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/viewpost/:id');
+        document.location.replace(`/viewpost/${id}`);
       } else {
         alert('Failed to edit post');
       }
@@ -25,5 +25,5 @@ const editPostHandler = async (event) => {
   };
 
   document
-//   .querySelector('#create-post-form')
+  .querySelector('#edit-post-form')
   .addEventListener('submit', editPostHandler);
