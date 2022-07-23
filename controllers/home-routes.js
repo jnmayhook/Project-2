@@ -83,7 +83,7 @@ router.get("/editpost/:id", withAuth, async (req, res) => {
 
         const editPost = editPostData.get({ plain: true });
         res.render("editpost", {
-            editPost,
+            ...editPost,
             logged_in: true
         });
     } catch (err) {
