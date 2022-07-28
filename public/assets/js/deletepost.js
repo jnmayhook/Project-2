@@ -15,7 +15,7 @@ console.log(post_id);
       console.log("Response okay");
       document.location.href="/";
     } else {
-      alert('Failed to create comment');
+      alert('Failed to delete post.  You cannot delete a post unless you are logged-in and created the post.');
     }
 };
 
