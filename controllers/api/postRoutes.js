@@ -35,7 +35,6 @@ router.get("/:id", async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
     try {
         const newPost = await Post.create({
-            // Placeholder until frontend FETCH requests are made - to be replaced with [...req.body] later
             ...req.body,
             user_id: req.session.user_id,
         });
